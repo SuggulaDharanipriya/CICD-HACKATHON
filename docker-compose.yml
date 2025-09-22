@@ -3,7 +3,7 @@ services:
     image: mysql:8
     container_name: mysql-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: docker
       MYSQL_DATABASE: careconnectdb
     ports:
       - "3307:3306"
