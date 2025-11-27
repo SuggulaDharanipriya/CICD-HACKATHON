@@ -1,13 +1,30 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL;
 import "./doctorcss/ViewAppointment.css";
+
+// Get API URL from environment variable or use default
+const getApiUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl) {
+    return envUrl;
+  }
+  // Try to use Vite proxy first (for development)
+  if (import.meta.env.DEV) {
+    return "/api";
+  }
+  // Default to localhost:1705 if not set
+  return "http://localhost:1705";
+};
+
+const API_URL = getApiUrl();
+console.log("ViewAppointment - Using API URL:", API_URL);
 
 const ViewAppointment = () => {
   const [appointments, setAppointments] = useState([]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [doctorId, setDoctorId] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [showTimeModal, setShowTimeModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [currentAppointment, setCurrentAppointment] = useState(null);
@@ -26,13 +43,46 @@ const ViewAppointment = () => {
 
   useEffect(() => {
     if (doctorId) {
+      setLoading(true);
+      setError("");
+      console.log("Fetching appointments for doctor ID:", doctorId);
+      console.log("API URL:", `${API_URL}/appointments/doctor/${doctorId}`);
+      
       axios
-        .get(`${API_URL}/appointments/doctor/${doctorId}`)
-        .then((res) => {
-          console.log("Appointments fetched:", res.data);
-          setAppointments(res.data);
+        .get(`${API_URL}/appointments/doctor/${doctorId}`, {
+          timeout: 10000
         })
-        .catch((err) => console.error("Error fetching appointments:", err));
+        .then((res) => {
+          console.log("Appointments fetched successfully:", res.data);
+          setAppointments(res.data || []);
+          setError(""); // Clear any previous errors
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error("Error fetching appointments:", err);
+          console.error("Error details:", {
+            message: err.message,
+            code: err.code,
+            response: err.response,
+            request: err.request
+          });
+          
+          if (err.code === 'ECONNREFUSED' || err.code === 'ERR_NETWORK') {
+            setError(`Cannot connect to backend at ${API_URL}. Please verify the backend is running.`);
+          } else if (err.response) {
+            setError(`Server error (${err.response.status}): ${err.response.data || err.response.statusText}`);
+          } else if (err.request) {
+            setError(`Network error: No response from server. Check if backend is running.`);
+          } else {
+            setError("Failed to fetch appointments: " + err.message);
+          }
+          setAppointments([]); // Clear appointments on error
+          setLoading(false);
+        });
+    } else {
+      console.warn("Doctor ID not found in sessionStorage");
+      setError("Doctor ID not found. Please login again.");
+      setLoading(false);
     }
   }, [doctorId]);
 
@@ -165,11 +215,18 @@ const ViewAppointment = () => {
         </div>
       )}
       
-      {appointments.length === 0 ? (
+      {loading ? (
+        <div className="no-appointments">
+          <p>Loading appointments...</p>
+        </div>
+      ) : appointments.length === 0 && !error ? (
         <div className="no-appointments">
           <p>No appointments found.</p>
+          <p style={{ fontSize: '14px', color: '#666', marginTop: '10px' }}>
+            Appointments will appear here once patients book appointments with you.
+          </p>
         </div>
-      ) : (
+      ) : appointments.length > 0 ? (
         <div className="appointments-table-container">
           <table className="appointments-table">
             <thead>
@@ -232,7 +289,7 @@ const ViewAppointment = () => {
             </tbody>
           </table>
         </div>
-      )}
+      ) : null}
 
       {/* Time Selection Modal */}
       {showTimeModal && currentAppointment && (

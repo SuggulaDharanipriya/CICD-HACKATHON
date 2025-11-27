@@ -1,0 +1,335 @@
+/* Modern Purple-Teal Gradient Theme with Smooth Animations */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(0, 191, 255, 0.1) 50%, rgba(138, 43, 226, 0.1) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+  overflow-y: auto;
+  position: relative;
+}
+
+.register-container::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.register-form {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  padding: 3rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 20px 60px rgba(138, 43, 226, 0.25);
+  border: 2px solid rgba(138, 43, 226, 0.2);
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+  animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: slideInDown 0.6s ease-out;
+}
+
+.signin-text {
+  font-weight: 800;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.2rem;
+}
+
+.signup-text {
+  font-weight: 400;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.05s; }
+.form-group:nth-child(2) { animation-delay: 0.1s; }
+.form-group:nth-child(3) { animation-delay: 0.15s; }
+.form-group:nth-child(4) { animation-delay: 0.2s; }
+.form-group:nth-child(5) { animation-delay: 0.25s; }
+.form-group:nth-child(6) { animation-delay: 0.3s; }
+.form-group:nth-child(7) { animation-delay: 0.35s; }
+.form-group:nth-child(8) { animation-delay: 0.4s; }
+.form-group:nth-child(9) { animation-delay: 0.45s; }
+.form-group:nth-child(10) { animation-delay: 0.5s; }
+.form-group:nth-child(11) { animation-delay: 0.55s; }
+.form-group:nth-child(12) { animation-delay: 0.6s; }
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  box-sizing: border-box;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a2be2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #8a2be2;
+  box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.1);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.success-message {
+  color: #00b894;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(46, 213, 115, 0.15) 0%, rgba(0, 191, 255, 0.15) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 184, 148, 0.3);
+  font-weight: 600;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 71, 87, 0.15) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  font-weight: 600;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.signin-button {
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 24px rgba(138, 43, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.signin-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.signin-button:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.signin-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(138, 43, 226, 0.4);
+}
+
+.signup-section {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(138, 43, 226, 0.1);
+}
+
+.signup-text {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.signup-button {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(138, 43, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.signup-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.signup-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px 10px;
+  }
+
+  .register-form {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .signin-text,
+  .signup-text {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+}

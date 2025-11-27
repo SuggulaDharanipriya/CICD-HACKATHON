@@ -8,6 +8,7 @@ import NotFound from "./NotFound";
 import PatientLogin from "../patient/PatientLogin";
 import PatientRegistration from "../patient/PatientRegistration";
 import DoctorLogin from "../doctor/DoctorLogin";
+import DoctorRegistration from "../doctor/DoctorRegistration";
 import AdminLogin from "../admin/AdminLogin";
 
 // Assets
@@ -40,8 +41,8 @@ export default function MainNavBar() {
       <nav className="navbar">
         {/* ✅ Logo */}
         <div className="logo">
-          <img src={logo} alt="CareConnect Logo" className="logo-img" />
-          <span>CareConnect</span>
+          <img src={logo} alt="Health Records System Logo" className="logo-img" />
+          <span> MediTrack</span>
         </div>
 
         {/* ✅ Mobile Menu Toggle */}
@@ -57,6 +58,11 @@ export default function MainNavBar() {
           <li>
             <Link to="/patient/registration" onClick={() => setIsMenuOpen(false)}>
               Patient Registration
+            </Link>
+          </li>
+          <li>
+            <Link to="/doctor/registration" onClick={() => setIsMenuOpen(false)}>
+              Doctor Registration
             </Link>
           </li>
 
@@ -96,6 +102,7 @@ export default function MainNavBar() {
         <Route path="/patient/login" element={<PatientLogin />} />
         <Route path="/patient/registration" element={<PatientRegistration />} />
         <Route path="/doctor/login" element={<DoctorLogin />} />
+        <Route path="/doctor/registration" element={<DoctorRegistration />} />
         <Route path="/admin/login" element={<AdminLogin />} />
 
         {/* 404 fallback */}

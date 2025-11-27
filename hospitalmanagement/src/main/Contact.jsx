@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="container">
       <div className="contact-header">
         <h1>Contact Us</h1>
-        <p>We are here to assist you with any hospital queries or appointments.</p>
+        <p>We are here to assist you with any health records queries or appointments.</p>
       </div>
 
       <div className="contact-content row" style={{ alignItems: 'start' }}>
@@ -14,7 +14,7 @@ export default function Contact() {
           <div className="info-card">
             <FaEnvelope className="icon" />
             <h3>Email Us</h3>
-            <p>info@careconnecthospital.com</p>
+            <p>info@healthrecordssystem.com</p>
             <span>We'll respond within 24 hours</span>
           </div>
 
@@ -35,25 +35,25 @@ export default function Contact() {
           <div className="info-card">
             <FaMapMarkerAlt className="icon" />
             <h3>Visit Us</h3>
-            <p>CareConnect</p>
+            <p>Health Records System</p>
             <span>Vijayawada, Andhra Pradesh, India</span>
           </div>
         </div>
 
         <aside className="contact-message col" style={{ maxWidth: 520 }}>
-          <h2>Why trust CareConnect?</h2>
+          <h2>Why trust Health Records System?</h2>
           <div className="features">
             <div className="feature">
               <h4>Expert Doctors</h4>
               <p>Consult with highly qualified specialists for your health needs.</p>
             </div>
             <div className="feature">
-              <h4>Advanced Facilities</h4>
-              <p>State-of-the-art medical equipment ensures quality care.</p>
+              <h4>Secure Platform</h4>
+              <p>State-of-the-art security ensures your health records are protected.</p>
             </div>
             <div className="feature">
               <h4>24/7 Support</h4>
-              <p>Our hospital staff is always ready to assist you anytime.</p>
+              <p>Our support team is always ready to assist you anytime.</p>
             </div>
           </div>
         </aside>
@@ -62,7 +62,7 @@ export default function Contact() {
       <div className="contact-footer" style={{ marginTop: 36 }}>
         <p>Book appointments and reach out to our experts today!</p>
         <div className="social-links">
-          <a href="mailto:info@careconnecthospital.com" className="social-link"><FaEnvelope /> Email</a>
+          <a href="mailto:info@healthrecordssystem.com" className="social-link"><FaEnvelope /> Email</a>
           <a href="tel:+7032153789" className="social-link"><FaPhone /> Call</a>
           <a href="https://instagram.com/kluniversity" className="social-link"><FaInstagram /> Instagram</a>
         </div>

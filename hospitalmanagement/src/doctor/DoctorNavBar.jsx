@@ -34,7 +34,7 @@ export default function DoctorNavBar() {
       <nav className="navbar">
         <div className="logo" style={{ display: "flex", alignItems: "center" }}>
           <h1 style={{ fontSize: "22px", color: "white" }}>
-            <strong>HMS Doctor</strong>
+            <strong>Health Records System Doctor</strong>
           </h1>
         </div>
 

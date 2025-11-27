@@ -49,7 +49,7 @@ export default function AdminDashboard() {
       <div className="dashboard-header">
         <div className="welcome-section">
           <h1>Admin Dashboard</h1>
-          <p>Hospital Management System Overview</p>
+          <p>Health Records System Overview</p>
         </div>
         <div className="admin-avatar">
           <span>A</span>

@@ -17,8 +17,8 @@ const About = () => {
       {/* Header Section */}
       <div className="about-header">
         <div className="header-content">
-          <h1>Welcome to HMS</h1>
-          <p className="subtitle">Modern Healthcare Through Technology</p>
+          <h1>Welcome to Health Records System</h1>
+          <p className="subtitle">Secure Health Records Management Through Technology</p>
         </div>
       </div>
 
@@ -29,9 +29,9 @@ const About = () => {
             <FaHeartbeat className="vision-icon" />
             <h2>Our Mission</h2>
             <p>
-              To provide high-quality healthcare services by combining
-              technology, compassion, and expertise. We aim to make patient care
-              seamless, efficient, and accessible to all.
+              To provide secure storage and management of patient health records. 
+              Patients can access their medical history, prescriptions, and lab reports. 
+              Healthcare providers can update records and monitor patient progress with streamlined communication.
             </p>
           </div>
 
@@ -77,15 +77,14 @@ const About = () => {
         {/* Right Side - Features & Stats */}
         <div className="right-section">
           <div className="features-section">
-            <h2>Hospital Features</h2>
+            <h2>System Features</h2>
             <div className="features-grid">
               <div className="feature-card">
                 <FaUserMd className="feature-icon" />
                 <div className="feature-content">
-                  <h3>Expert Doctors</h3>
+                  <h3>Secure Records</h3>
                   <p>
-                    Access to a wide range of experienced specialists and
-                    surgeons.
+                    Secure storage and management of patient health records with data privacy compliance.
                   </p>
                 </div>
               </div>
@@ -93,9 +92,9 @@ const About = () => {
               <div className="feature-card">
                 <FaProcedures className="feature-icon" />
                 <div className="feature-content">
-                  <h3>Patient Care</h3>
+                  <h3>Health Monitoring</h3>
                   <p>
-                    Advanced inpatient and outpatient services with 24/7 support.
+                    Healthcare providers can update records and monitor patient progress seamlessly.
                   </p>
                 </div>
               </div>
@@ -103,10 +102,9 @@ const About = () => {
               <div className="feature-card">
                 <FaClinicMedical className="feature-icon" />
                 <div className="feature-content">
-                  <h3>Smart Appointments</h3>
+                  <h3>Medical History Access</h3>
                   <p>
-                    Simplified booking and management system for doctors and
-                    patients.
+                    Patients can access their medical history, prescriptions, and lab reports anytime.
                   </p>
                 </div>
               </div>
@@ -114,10 +112,9 @@ const About = () => {
               <div className="feature-card">
                 <FaChartLine className="feature-icon" />
                 <div className="feature-content">
-                  <h3>Medical Reports</h3>
+                  <h3>Streamlined Communication</h3>
                   <p>
-                    Secure access to patient history, diagnostics, and lab
-                    results anytime.
+                    Enhanced communication between patients and doctors for better healthcare delivery.
                   </p>
                 </div>
               </div>
@@ -154,7 +151,7 @@ const About = () => {
           <div className="contact-info">
             <div className="contact-item">
               <h4>Email Support</h4>
-              <p>support@hms.com</p>
+              <p>support@healthrecordssystem.com</p>
             </div>
             <div className="contact-item">
               <h4>Emergency Helpline</h4>

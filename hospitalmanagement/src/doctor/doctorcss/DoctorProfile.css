@@ -1,88 +1,202 @@
+/* Modern Purple-Teal Gradient Theme with Smooth Animations */
+
 .doctor-profile-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.2);
   font-family: "Inter", "Segoe UI", sans-serif;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-profile-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, transparent 70%);
+  animation: rotate 25s linear infinite;
+  pointer-events: none;
 }
 
 .doctor-profile-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 20px;
-  margin-bottom: 25px;
+  gap: 2rem;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%) 1;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  animation: slideInDown 0.6s ease-out;
 }
 
 .doctor-profile-image {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #1976d2;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%) 1;
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.3);
+  animation: float 3s ease-in-out infinite;
 }
 
 .doctor-name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #222;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .doctor-specialization {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #1976d2;
-  margin-top: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 0.5rem;
 }
 
 .doctor-profile-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px 40px;
+  gap: 1.5rem 3rem;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .detail-item {
   display: flex;
   flex-direction: column;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.05) 0%, rgba(0, 191, 255, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(138, 43, 226, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.detail-item:hover::before {
+  left: 100%;
+}
+
+.detail-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.3);
 }
 
 .detail-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .detail-value {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #222;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Loading */
 .loading-message {
   text-align: center;
-  font-size: 1.1rem;
-  color: #1976d2;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
+  font-weight: 700;
 }
 
 .loading-spinner {
-  width: 22px;
-  height: 22px;
-  border: 3px solid #e0e0e0;
-  border-top-color: #1976d2;
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(138, 43, 226, 0.1);
+  border-top-color: #8a2be2;
+  border-right-color: #00bfff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+}
+
+.doctor-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes spin {
@@ -91,22 +205,39 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .doctor-profile-details {
-    grid-template-columns: 1fr;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
-.doctor-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #1976d2;
-  color: white;
-  font-size: 2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid #1976d2;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .doctor-profile-container {
+    margin: 20px;
+    padding: 2rem;
+  }
+
+  .doctor-profile-details {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .doctor-profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
 }

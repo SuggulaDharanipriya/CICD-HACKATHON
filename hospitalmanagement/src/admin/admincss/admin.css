@@ -142,30 +142,121 @@ input:focus {
 }
 
 .navbar {
-  background: linear-gradient(135deg, #3498db 0%, #1e3799 100%);
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 50%, #8a2be2 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.3);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 1rem;
+  animation: fadeInLeft 0.6s ease-out;
 }
 
-.logo h1 {
-  color: white;
+.logo h1,
+.navbar h1 {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 50%, #ffffff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
   margin: 0;
   font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar h1 strong {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 50%, #ffffff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.logo h1:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4));
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Profile Link Styling */
+.profile-link {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.profile-link ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-link a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
   font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-link a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ==============================
@@ -190,12 +281,16 @@ input:focus {
 }
 
 .sidebar-heading {
-  color: #1976d2;
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 1.5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .sidebar ul {
@@ -220,16 +315,16 @@ input:focus {
 }
 
 .sidebar a:hover {
-  background: #f7fafc;
-  color: #1976d2;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(0, 191, 255, 0.1) 100%);
+  color: #8a2be2;
   transform: translateX(6px);
 }
 
 .sidebar a.active {
-  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+  background: linear-gradient(135deg, #8a2be2 0%, #00bfff 100%);
   color: white;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.2);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
 }
 
 /* ==============================

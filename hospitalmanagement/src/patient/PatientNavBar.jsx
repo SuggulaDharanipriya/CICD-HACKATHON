@@ -38,7 +38,7 @@ export default function PatientNavBar() {
       <nav className="navbar">
         <div className="logo" style={{ display: "flex", alignItems: "center" }}>
           <h1 style={{ fontSize: "22px", color: "white" }}>
-            <strong>CareConnect Patient</strong>
+            <strong>Health Records System Patient</strong>
           </h1>
         </div>
 

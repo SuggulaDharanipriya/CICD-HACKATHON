@@ -1,4 +1,4 @@
-/* CareConnect Hospital Management System - Global Styles */
+/* Health Records System - Global Styles */
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 :root {
-  /* CareConnect Brand Colors */
+  /* Health Records System Brand Colors */
   --primary-color: #1976d2;
   --primary-dark: #1565c0;
   --primary-light: #42a5f5;

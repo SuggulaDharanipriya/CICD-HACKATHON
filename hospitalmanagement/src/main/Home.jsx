@@ -12,11 +12,10 @@ export default function Home() {
       <section className="hero-section">
         <div className="hero-content row">
           <div className="hero-text col">
-            <h1>Welcome to CareConnect 🩺</h1>
+            <h1>Welcome to Health Records System 🩺</h1>
        
             <p className="hero-description">
-              Efficiently manage patients, appointments, and billing processes. Doctors can access medical histories,
-              schedule consultations, and manage prescriptions. Administrators handle staff and resources for smooth operations.
+              Secure storage and management of patient health records. Patients can access their medical history, prescriptions, and lab reports. Healthcare providers can update records and monitor patient progress. Streamlined communication between patients and doctors with data privacy and compliance.
             </p>
             <div className="hero-buttons">
               <button
@@ -37,7 +36,7 @@ export default function Home() {
           <div className="hero-image col">
             <img
               src={image}
-              alt="Hospital Management"
+              alt="Health Records System"
               style={{
                 width: "100%",
                 borderRadius: "16px",
@@ -50,27 +49,27 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="features-section">
-        <h2 className="section-title">Why CareConnect is Right for You?</h2>
+        <h2 className="section-title">Why Health Records System is Right for You?</h2>
         <div className="features-grid row">
           <div className="feature-card col">
             <FaUserMd className="feature-icon" />
-            <h3>Patient Care</h3>
-            <p>Doctors can manage patient records and prescriptions with ease</p>
+            <h3>Secure Records</h3>
+            <p>Patients can securely access their medical history, prescriptions, and lab reports</p>
           </div>
           <div className="feature-card col">
             <FaCalendarAlt className="feature-icon" />
-            <h3>Appointments</h3>
-            <p>Schedule and track consultations seamlessly</p>
+            <h3>Health Monitoring</h3>
+            <p>Healthcare providers can update records and monitor patient progress seamlessly</p>
           </div>
           <div className="feature-card col">
             <FaFileInvoiceDollar className="feature-icon" />
-            <h3>Billing</h3>
-            <p>Automated billing and payment tracking</p>
+            <h3>Data Privacy</h3>
+            <p>Ensures data privacy and compliance with healthcare regulations</p>
           </div>
           <div className="feature-card col">
             <FaHospital className="feature-icon" />
-            <h3>Administration</h3>
-            <p>Manage staff, schedules, and hospital resources efficiently</p>
+            <h3>Communication</h3>
+            <p>Streamlined communication between patients and doctors</p>
           </div>
         </div>
       </section>

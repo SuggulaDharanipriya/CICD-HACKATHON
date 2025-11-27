@@ -85,7 +85,7 @@ export default function PatientDashboard() {
       <div className="dashboard-header">
         <div className="welcome-section">
           <h1>Welcome back, {patient.name}!</h1>
-          <p>Here's your health management overview</p>
+          <p>Here's your health records overview</p>
         </div>
         <div className="patient-avatar">
           {patient.name ? patient.name.charAt(0).toUpperCase() : 'P'}

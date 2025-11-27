@@ -8,7 +8,7 @@ public class HospitalManagementSpringBootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HospitalManagementSpringBootApplication.class, args);
-		System.out.println("Hello CareConnect :) ");
+		System.out.println("Hello Health Records System :) ");
 	}
 
 }

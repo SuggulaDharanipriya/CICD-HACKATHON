@@ -84,13 +84,10 @@ export default function DoctorLogin() {
         </form>
 
         <div className="signup-section">
-          <p className="signup-text">New to CareConnect?</p>
-          <Link to="/contact" className="signup-button">
+          <p className="signup-text">New to Health Records System?</p>
+          <Link to="/doctor/registration" className="signup-button">
             Register as Doctor
           </Link>
-          <p className="signup-info">
-            Contact our admin team for platform access
-          </p>
         </div>
       </div>
     </div>

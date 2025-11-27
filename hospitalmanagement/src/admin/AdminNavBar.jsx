@@ -27,7 +27,7 @@ export default function AdminNavBar() {
       {/* Top Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <h1 style={{ color: "white" }}>CareConnect Admin</h1>
+          <h1 style={{ color: "white" }}>Health Records System Admin</h1>
         </div>
       </nav>
 
