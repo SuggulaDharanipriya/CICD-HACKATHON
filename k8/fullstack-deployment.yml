@@ -126,5 +126,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30080        # Optional fixed NodePort (range 30000–32767)
+      nodePort: 30081        # Optional fixed NodePort (range 30000–32767)
   type: NodePort
